@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html, body {
 	color: #0000ff;
+	font-family: 'Roboto', sans-serif;
 }
 
 #container {
@@ -17,9 +20,56 @@ html, body {
 	margin: 0 auto;
 
 }
-
-#container ul{
+h2 {
+	padding-right: 20px;
+}
+ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 30px;
+}
+
+li span::before,
+li span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+li span.radio:hover {
+  cursor: pointer;
+}
+li span.radio::before {
+  left: 5px;
+  width: 20px;
+  height: 9px;
+  background-color: #A8AAC1;
+  border-radius: 20px;
+}
+
+li span.radio::after {
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #6C788A;
+  transition: left .25s, background-color .25s;
+}
+
+input[type="radio"]:checked + label span.radio::after {
+  left: 18px;
+  background-color: #0DFF92;
 }
